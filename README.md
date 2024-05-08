@@ -95,8 +95,11 @@ then go to file producer.py, and type the command python producer.py
 #Key Outcomes:
 
 Gained the understanding of the AQMP protocol and RabbitMQ.
+
 Figured out the configurations setup of RabbitMQ and AMQP protocol.
+
 Implemented the python services to establish the communication between the producer and the consumer using RabbitMQ and AMQP protocol.
+
 Integrated MongoDB with Python to store the received messages in the database.
 
 Thank You
