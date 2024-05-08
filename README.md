@@ -2,6 +2,7 @@
 This repository aims to develop a backend system in Python that handles incoming AMQP messages via RabbitMQ and stores them in MongoDB.
 
 AMQP - To give it a brief description, AMQP stands for Advanced Message Queuing Protocol. It is an open standard protocol used for establishing communication between different systems.
+
 RabbitMQ  - It is an open source message broker software which implements AMQP to facilitate the connection between different systems.
 
 There are 2 files one is the producer.py and second one is the consumer.py. Let's dive into these files and understand it's logic.
