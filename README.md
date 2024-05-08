@@ -27,7 +27,9 @@ Used "basic_publish" to specify the exchange for the message to be sent from the
 channel.basic_publish(exchange ='', routing_key='letterbox', body=message)
 
 exchange: This parameter specifies which exchange is being used. In this case it hasn't got any name, but one can name it too.
+
 routing_key: This parameter acts as a password as it determines which queue should receive a particular message.
+
 body: This parameter contains the actual message to be sent.
 
 Then after the completion of the work the connection is cosed or stopped.
@@ -36,12 +38,17 @@ connection.close()
 #consumer.py:
 
 In this file firstly we have imported all the required packages, like "pika", then the "pymongo" to establish the connection between the server and the MongoDB.
+
 MongoCLient is used for setting up the connection.
+
 ConnectionFailure is used to check for any issue occured while the connection is being established.
 
 import pika
+
 import pymongo
+
 from pymongo import MongoClient
+
 from pymongo.errors import ConnectionFailure
 
 Implemented exceptional handling to check if the connection with the database has been established or not and created the database and the collection.
@@ -52,8 +59,11 @@ Attributes used in the function are:
 def on_message_received(ch, method, properties, body):
 
 ch: Channel (ch) parameter is used to specify from which channel the message is coming.
+
 method: This parameter contains all the meta data or we can say vital information to authenticate the message. For eg, routing key, exchange name, etc.
+
 properties: This paramter contains the information about the structure of the message incoming. For eg., content type, headers, etc.
+
 body: This parameter contains the actual message, also known as payload.
 
 All these parameters are crucial for the working of this function.
@@ -69,13 +79,16 @@ For confirmation purpose the message will be displayed in the console.
 Then the connections are done.
 
 Queue is again declared.
+
 NOTE: This does not create another queue if the queue of the same name is present, instead it will continue with the already initialized queue.
 
 Used "basic_consume" to consume messages from a queue. It's an asynchronous consumption to avoid message blocking for the awaiting responses from the previous called methods.
 The parameters it contains are:
 
 queue: specifies which queue name in this case it is "letterbox".
+
 auto_ack: acknowledges the message has been received automatically, in this case, it is set to "True".
+
 on_message_callback: this parameter is used to take the function which is responsible for handling the messages and processing them.
 
 Then the exception handling is used in case of function getting terminated due to keyboard interruption.
