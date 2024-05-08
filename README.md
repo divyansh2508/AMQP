@@ -80,6 +80,11 @@ on_message_callback: this parameter is used to take the function which is respon
 Then the exception handling is used in case of function getting terminated due to keyboard interruption.
 Then after the completion of the work the connection is cosed or stopped.
 
+#Setup
+Install the packages pika and pymongo, with the following command on Windows respectively:
+pip install pika
+python -m pip install "pymongo[srv]"
+
 #How to run the project?
 
 To run this, first go to file consumer.py, run it using the command python consumer.py
